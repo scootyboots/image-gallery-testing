@@ -5,6 +5,9 @@ import CanvasImage from './components/CanvasImage'
 import GalleryLightbox from './components/GalleryLightbox'
 import ZoomedImage from './components/ZoomedImage'
 import './App.css'
+import FullImage from './components/FullImage'
+import galleryImages from './galleryImages'
+import ImageWithZoom from './components/ImageWithZoom'
 
 const fasterImage = <img src={faster} className="primaryImage" />
 
@@ -55,11 +58,14 @@ function App() {
 
   return (
     <div className="App">
-      <ZoomedImage />
+      <ImageWithZoom src={galleryImages[0].src} alt={galleryImages[0].alt} />
       <button onClick={() => setGalleryIsOpen((prev) => !prev)}>
         open gallery lightbox
       </button>
       <GalleryLightbox isOpen={galleryIsOpen} />
+      {galleryIsOpen && (
+        <div className="lightbox-background absolute top-0 bottom-0 left-0 right-0 bg-slate-900 z-10 opacity-80"></div>
+      )}
     </div>
   )
 }
