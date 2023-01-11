@@ -19,28 +19,31 @@ const GalleryLightBox = ({ isOpen }: GalleryLightBoxProps) => {
   }
 
   return (
-    <Lightbox
-      isOpen={isOpen}
-      onPrev={goToPrevious}
-      onNext={goToNext}
-      images={galleryImages}
-      currentIndex={currentImageIndex}
-      renderNextButton={() => (
-        <button style={{ zIndex: '10000' }} onClick={goToNext}>
-          next
-        </button>
-      )}
-      renderPrevButton={() => (
-        <button style={{ zIndex: '10000' }} onClick={goToPrevious}>
-          prev
-        </button>
-      )}
-      renderHeader={() => (
-        <div className="lightbox-header">
-          <h1>header goes here</h1>
-        </div>
-      )}
-    />
+    <>
+      <Lightbox
+        isOpen={isOpen}
+        onPrev={goToPrevious}
+        onNext={goToNext}
+        images={galleryImages}
+        currentIndex={currentImageIndex}
+        renderNextButton={() => (
+          <button style={{ zIndex: '10000' }} onClick={goToNext}>
+            next
+          </button>
+        )}
+        renderPrevButton={() => (
+          <button style={{ zIndex: '10000' }} onClick={goToPrevious}>
+            prev
+          </button>
+        )}
+        renderHeader={() => (
+          <div className="lightbox-header">
+            <h1>header goes here</h1>
+          </div>
+        )}
+      />
+      <div className="lightbox-background"></div>
+    </>
   )
 }
 

@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import faster from './assets/images/faster-1200.jpg'
 import CanvasImage from './components/CanvasImage'
 import GalleryLightbox from './components/GalleryLightbox'
+import ZoomedImage from './components/ZoomedImage'
 import './App.css'
 
 const fasterImage = <img src={faster} className="primaryImage" />
@@ -54,6 +55,7 @@ function App() {
 
   return (
     <div className="App">
+      <ZoomedImage />
       <button onClick={() => setGalleryIsOpen((prev) => !prev)}>
         open gallery lightbox
       </button>
